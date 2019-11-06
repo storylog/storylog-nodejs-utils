@@ -1,0 +1,8 @@
+{
+  "name": "storylog-nodejs-utils",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/storylog/storylog-nodejs-utils.git",
+  "author": "chutiphon-k <chutiphon.ksp@gmail.com>",
+  "license": "MIT"
+}
