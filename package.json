@@ -1,8 +1,64 @@
 {
   "name": "storylog-nodejs-utils",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "repository": "https://github.com/storylog/storylog-nodejs-utils.git",
   "author": "chutiphon-k <chutiphon.ksp@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "test": "jest --verbose",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "lint": "tslint -p tsconfig.json -c tslint.json"
+  },
+  "dependencies": {
+    "lodash": "^4.17.15"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.22",
+    "@types/lodash": "^4.14.144",
+    "@types/node": "^12.12.6",
+    "husky": "^3.0.9",
+    "jest": "^24.9.0",
+    "jest-watch-typeahead": "^0.4.0",
+    "prettier": "^1.18.2",
+    "ts-jest": "^24.1.0",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-config-storylog": "https://github.com/storylog/tslint-config-storylog",
+    "tslint-plugin-prettier": "^2.0.1",
+    "typescript": "^3.7.2",
+    "yarnhook": "^0.4.3"
+  },
+  "peerDependencies": {
+    "lodash": "^4.17.15"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".spec.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node",
+    "watchPlugins": [
+      "jest-watch-typeahead/filename",
+      "jest-watch-typeahead/testname"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "yarn lint",
+      "pre-commit": "yarn build && git add dist",
+      "post-checkout": "yarnhook",
+      "post-merge": "yarnhook"
+    }
+  }
 }

@@ -1,0 +1,11 @@
+{
+  "extends": [
+    "tslint-config-storylog",
+    "tslint-plugin-prettier",
+    "tslint-config-prettier"
+  ],
+  "rules": {
+    "file-name-casing": [true, "kebab-case"],
+    "prettier": [true, ".prettierrc"]
+  }
+}
