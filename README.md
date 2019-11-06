@@ -11,4 +11,14 @@ Or using yarn
 yarn add https://github.com/storylog/storylog-nodejs-utils.git
 ```
 
+## Utilities
+- `convertToArray`
+- `defaults`
+- `filterNil`
+- `filterNnull`
+- `filterUndefined`
+
 ## Usage
+```js
+import { convertToArray } from 'storylog-nodejs-utils'
+```
