@@ -1,5 +1,3 @@
-import { isUndefined, negate, pickBy } from 'lodash';
+import { Dictionary, isUndefined, omitBy } from 'lodash';
 
-export const filterUndefined = <T extends object>(object: T): Partial<T> => {
-  return pickBy(object, negate(isUndefined));
-};
+export const filterUndefined = <T extends object>(object: T): Dictionary<T> => omitBy(object, isUndefined);

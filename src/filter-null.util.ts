@@ -1,5 +1,3 @@
-import { isNull, negate, pickBy } from 'lodash';
+import { Dictionary, isNull, omitBy } from 'lodash';
 
-export const filterNull = <T extends object>(object: T): Partial<T> => {
-  return pickBy(object, negate(isNull));
-};
+export const filterNull = <T extends object>(object: T): Dictionary<T> => omitBy(object, isNull);

@@ -18,6 +18,6 @@ describe('defaults', () => {
 
   it('should assign source properties if missing on nested `object`', () => {
     const actual = defaults({ a: { b: 1 }, b: 3 }, { a: { c: 2 } });
-    expect(actual).toStrictEqual({ a: { b: 1, c: 2 } });
+    expect(actual).toStrictEqual({ a: { b: 1, c: 2 }, b: 3 });
   });
 });

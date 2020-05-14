@@ -1,15 +1,12 @@
 import { assignWith, isPlainObject } from 'lodash';
 
 function customizer(currentValue: any, targetValue: any): boolean {
-  if (isPlainObject(currentValue)) {
-    return assignWith({}, currentValue, targetValue, customizer);
-  }
-  return currentValue ?? targetValue;
+  return isPlainObject(currentValue)
+    ? assignWith({}, currentValue, targetValue, customizer)
+    : currentValue ?? targetValue;
 }
 
 export const defaults = <TObject extends object, TSource extends object>(
   object: TObject,
   source: TSource,
-): TObject & TSource => {
-  return assignWith({}, object, source, customizer);
-};
+): TObject & TSource => assignWith({}, object, source, customizer);
