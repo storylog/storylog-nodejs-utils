@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.defaults = void 0;
 const lodash_1 = require("lodash");
 function customizer(currentValue, targetValue) {
     return lodash_1.isPlainObject(currentValue)

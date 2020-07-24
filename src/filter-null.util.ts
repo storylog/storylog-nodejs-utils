@@ -1,3 +1,3 @@
-import { Dictionary, isNull, omitBy } from 'lodash';
+import { isNull, omitBy, PartialObject } from 'lodash';
 
-export const filterNull = <T extends object>(object: T): Dictionary<T> => omitBy(object, isNull);
+export const filterNull = <T extends object>(object: T): PartialObject<T> => omitBy<T>(object, isNull);
